@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* ============================================
+   SLL Design System — Tailwind v4 Theme
+   ============================================ */
+
+@theme {
+  /* --- Color Palette --- */
+  --color-primary-50: #eef7ff;
+  --color-primary-100: #d9edff;
+  --color-primary-200: #bce0ff;
+  --color-primary-300: #8ecdff;
+  --color-primary-400: #59b0ff;
+  --color-primary-500: #338dff;
+  --color-primary-600: #1b6cf5;
+  --color-primary-700: #1456e1;
+  --color-primary-800: #1745b6;
+  --color-primary-900: #193d8f;
+  --color-primary-950: #142757;
+
+  --color-accent-50: #ecfdf5;
+  --color-accent-100: #d1fae5;
+  --color-accent-200: #a7f3d0;
+  --color-accent-300: #6ee7b7;
+  --color-accent-400: #34d399;
+  --color-accent-500: #10b981;
+  --color-accent-600: #059669;
+  --color-accent-700: #047857;
+  --color-accent-800: #065f46;
+  --color-accent-900: #064e3b;
+  --color-accent-950: #022c22;
+
+  --color-navy-50: #f0f4f8;
+  --color-navy-100: #d9e2ec;
+  --color-navy-200: #bcccdc;
+  --color-navy-300: #9fb3c8;
+  --color-navy-400: #829ab1;
+  --color-navy-500: #627d98;
+  --color-navy-600: #486581;
+  --color-navy-700: #334e68;
+  --color-navy-800: #243b53;
+  --color-navy-900: #102a43;
+  --color-navy-950: #0a1929;
+
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+
+  --color-surface: #ffffff;
+  --color-surface-dim: #f8fafc;
+  --color-surface-dark: #0f172a;
+  --color-surface-dark-dim: #1e293b;
+  --color-foreground: #0f172a;
+  --color-foreground-muted: #64748b;
+  --color-foreground-dark: #f1f5f9;
+  --color-foreground-dark-muted: #94a3b8;
+
+  /* --- Typography --- */
+  --font-sans: var(--font-inter), "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  /* --- Spacing scale shortcuts --- */
+  --spacing-sidebar: 260px;
+  --spacing-header: 64px;
+  --spacing-bottom-nav: 72px;
+
+  /* --- Animations --- */
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-slide-up: slide-up 0.4s ease-out both;
+  --animate-slide-in-left: slide-in-left 0.3s ease-out both;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+}
+
+/* --- Keyframes --- */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* --- Base Styles --- */
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-400);
+}
+
+/* --- Focus Ring Utility --- */
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
+}
